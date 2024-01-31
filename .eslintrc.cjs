@@ -5,7 +5,8 @@ module.exports = {
     },
     "extends": [
         "eslint:recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "airbnb-base"
     ],
     "overrides": [
         {
@@ -26,9 +27,11 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "import"
     ],
     "rules": {
-        
+        "no-console": "off",
+        "import/extensions": "off"
     }
 }
