@@ -1,0 +1,10 @@
+"rules": {
+   "import/extensions": [
+      "error",
+      "ignorePackages",
+]
+      {
+        "no-console": "off",
+      }
+   
+}
