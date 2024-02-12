@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import user from '../../src/cli.js';
-import generateRandomNumber from '../../src/index.js';
+import { generateRandomNumber } from '../../src/index.js';
 
 const calculate = (num1, operator, num2) => {
   switch (operator) {
@@ -24,8 +24,8 @@ const brainCalc = () => {
   let correctAnswersCount = 0;
 
   while (correctAnswersCount < 3) {
-    const number1 = generateRandomNumber(1, 100);
-    const number2 = generateRandomNumber(1, 100);
+    const number1 = generateRandomNumber(1, 50);
+    const number2 = generateRandomNumber(1, 50);
     const operators = ['+', '-', '*'];
     const operator = operators[Math.floor(Math.random() * operators.length)];
 

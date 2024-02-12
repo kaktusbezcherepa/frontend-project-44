@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import user from '../../src/cli.js';
-import generateRandomNumber from '../../src/index.js';
+import { generateRandomNumber } from '../../src/index.js';
 
 const evenOrOdd = () => {
   const name = user();
@@ -11,10 +11,7 @@ const evenOrOdd = () => {
     const random = generateRandomNumber(1, 100);
     console.log(`Question: ${random}`);
     const answer = readlineSync.question('Answer: ');
-    if (
-      (random % 2 === 0 && answer === 'yes')
-        || (random % 2 !== 0 && answer === 'no')
-    ) {
+    if ((random % 2 === 0 && answer === 'yes') || (random % 2 !== 0 && answer === 'no')) {
       console.log('Correct');
       result += 1;
     } else {
