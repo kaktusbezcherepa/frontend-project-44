@@ -11,7 +11,6 @@ const evenOrOdd = () => {
     const random = generateRandomNumber(1, 100);
     console.log(`Question: ${random}`);
     const answer = readlineSync.question('Answer: ');
-
     if (
       (random % 2 === 0 && answer === 'yes')
         || (random % 2 !== 0 && answer === 'no')

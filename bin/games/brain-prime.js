@@ -1,16 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import user from '../../src/cli.js';
-import generateRandomNumber from '../../src/index.js';
-
-const isPrime = (num) => {
-  for (let i = 2; i <= Math.sqrt(num); i += 1) {
-    if (num % i === 0) {
-      return false;
-    }
-  }
-  return true;
-};
+import { generateRandomNumber, isPrime, wrongAnswer } from '../../src/index.js';
 
 const isPrimeGame = () => {
   console.log('Welcome to the Brain Games!');
@@ -30,13 +21,11 @@ const isPrimeGame = () => {
       console.log('Correct!');
       correctAnswersCount += 1;
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${name}!`);
+      wrongAnswer(answer, correctAnswer, name);
+
       return;
     }
   }
-
-  console.log(`Congratulations, ${name}!`);
 };
 
 isPrimeGame();

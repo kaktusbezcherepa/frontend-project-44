@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import user from '../../src/cli.js';
-import generateRandomNumber from '../../src/index.js';
+import { generateRandomNumber, wrongAnswer } from '../../src/index.js';
 
 const dcg = () => {
   console.log('Welcome to the Brain Games!');
@@ -24,15 +24,15 @@ const dcg = () => {
     }
     const correctAnswer = a;
 
-    if (parseInt(answer, 10) !== correctAnswer) {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was ${correctAnswer}.`);
-      console.log(`Let's try again, ${name}!`);
+    wrongAnswer(answer, correctAnswer, name);
+
+    if (answer === correctAnswer.toString()) {
+      console.log('Correct!');
+      correctAnswersCount += 1;
+    } else {
       return;
     }
-    correctAnswersCount += 1;
   }
-
-  console.log(`Congratulations, ${name}!`);
 };
 
 dcg();
