@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import user from '../../src/cli.js';
-
-const generateRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+import generateRandomNumber from '../../src/index.js';
 
 const calculate = (num1, operator, num2) => {
   switch (operator) {

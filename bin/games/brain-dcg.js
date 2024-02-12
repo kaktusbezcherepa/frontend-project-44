@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import user from '../../src/cli.js';
-
-const generateRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+import generateRandomNumber from '../../src/index.js';
 
 const dcg = () => {
   console.log('Welcome to the Brain Games!');
@@ -15,33 +14,25 @@ const dcg = () => {
     const num2 = generateRandomNumber(1, 100);
     console.log(`Question: ${num1} ${num2}`);
     const answer = readlineSync.question('Your answer: ');
-    let min;
-    let max;
-    let correctAnswer;
 
-    if (num1 > num2) {
-      max = num1;
-      min = num2;
-    } else {
-      max = num2;
-      min = num1;
+    let a = num1;
+    let b = num2;
+    while (b !== 0) {
+      const temp = b;
+      b = a % b;
+      a = temp;
     }
-
-    for (let i = min; i >= 1; i--) {
-      if (max % i === 0 && min % i === 0) {
-        correctAnswer = i;
-      }
-    }
+    const correctAnswer = a;
 
     if (parseInt(answer, 10) !== correctAnswer) {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was ${correctAnswer}.`);
       console.log(`Let's try again, ${name}!`);
       return;
     }
+    correctAnswersCount += 1;
   }
-  if (correctAnswersCount === 3) {
-    console.log(`Congratulations, ${name}!`);
-  }
+
+  console.log(`Congratulations, ${name}!`);
 };
 
 dcg();
