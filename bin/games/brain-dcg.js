@@ -4,7 +4,6 @@ import user from '../../src/cli.js';
 import { generateRandomNumber, wrongAnswer } from '../../src/index.js';
 
 const dcg = () => {
-  console.log('Welcome to the Brain Games!');
   const name = user();
   console.log('Find the greatest common divisor of given numbers.');
   let correctAnswersCount = 0;
