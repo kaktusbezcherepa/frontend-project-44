@@ -17,7 +17,6 @@ const calculate = (num1, operator, num2) => {
 };
 
 const brainCalc = () => {
-  console.log('Welcome to the Brain Games!');
   const name = user();
   console.log('What is the result of the expression?');
 
@@ -45,9 +44,8 @@ const brainCalc = () => {
     }
   }
 
-  if (correctAnswersCount === 3) {
     console.log(`Congratulations, ${name}!`);
   }
-};
+
 
 brainCalc();

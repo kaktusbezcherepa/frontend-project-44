@@ -32,6 +32,8 @@ const dcg = () => {
       return;
     }
   }
+
+  console.log(`Congratulations, ${name}!`)
 };
 
 dcg();

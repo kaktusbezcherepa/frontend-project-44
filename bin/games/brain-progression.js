@@ -4,7 +4,6 @@ import user from '../../src/cli.js';
 import { generateRandomNumber } from '../../src/index.js';
 
 const algProgression = () => {
-  console.log('Welcome to the Brain Games!');
   const name = user();
   console.log('What number is missing in the progression?');
   let correctAnswersCount = 0;

@@ -1,11 +1,10 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import user from '../../src/cli.js';
-import {
-  generateRandomNumber, isPrime, wrongAnswer } from '../../src/index.js';
+import { generateRandomNumber, isPrime, wrongAnswer } from '../../src/index.js';
 
 const isPrimeGame = () => {
-  const name = user()
+  const name = user();
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   let correctAnswersCount = 0;
 
@@ -26,6 +25,7 @@ const isPrimeGame = () => {
       return;
     }
   }
+  console.log(`Congratulations, ${name}!`);
 };
 
 isPrimeGame();
