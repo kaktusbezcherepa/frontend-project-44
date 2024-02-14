@@ -33,7 +33,7 @@ const dcg = () => {
     }
   }
 
-  console.log(`Congratulations, ${name}!`)
+  console.log(`Congratulations, ${name}!`);
 };
 
 dcg();

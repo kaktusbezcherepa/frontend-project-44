@@ -44,8 +44,7 @@ const brainCalc = () => {
     }
   }
 
-    console.log(`Congratulations, ${name}!`);
-  }
-
+  console.log(`Congratulations, ${name}!`);
+};
 
 brainCalc();
